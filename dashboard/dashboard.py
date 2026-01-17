@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
 sns.set_theme(style="whitegrid")
 
@@ -9,12 +10,15 @@ st.set_page_config(
     page_title="Dashboard E-Commerce Brasil", page_icon=None, layout="wide"
 )
 
+# Path absolut
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 
 @st.cache_data
 def load_data():
     """Memuat dataset dashboard"""
-    orders_reviews = pd.read_csv("orders_reviews.csv")
-    geo_orders = pd.read_csv("geo_orders.csv")
+    orders_reviews = pd.read_csv(os.path.join(BASE_DIR, "orders_reviews.csv"))
+    geo_orders = pd.read_csv(os.path.join(BASE_DIR, "geo_orders.csv"))
 
     date_cols = ["order_purchase_timestamp", "order_delivered_customer_date"]
     for col in date_cols:
