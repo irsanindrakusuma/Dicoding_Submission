@@ -1,0 +1,15 @@
+[project]
+name = "submission"
+version = "0.1.0"
+description = "Proyek Analisis Data E-Commerce Brasil"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "ipykernel>=7.1.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.1",
+    "pandas>=2.3.3",
+    "seaborn>=0.13.2",
+    "streamlit>=1.53.0",
+]
